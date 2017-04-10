@@ -22,7 +22,7 @@
 ; This represents RPN as from right to left RPN must start with an operator and end with 2 numbers to be operated on.
 (define start-perm (list -1 -1 -1 -1 1 1 1 1))
 (define X (remove-duplicates (permutations start-perm)))
-(define l (list -1 -1 -1 -1 1 1 1))
+;(define l (list -1 -1 -1 -1 1 1 1))
 
 (define make-rpn l)
 (append (list 1 1) l (list -1))
@@ -37,5 +37,9 @@
         (valid-rpn? (car e) (- 1 s))
         )))
 
+;To do:
+;loop through the permutations of the list w/ operands
+;Output correct equations, discard rest.
+;Fix error in provided code.
 
 
