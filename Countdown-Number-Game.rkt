@@ -45,6 +45,7 @@
     [(empty? lOps) lNum]
     [else (cons (first lOps)(interleave lNum (rest lOps)))]))
 (interleave all-randOps usableNum)
+;(interleave all-ops all-numbers)
 
 (newline)
 ; Found information about getting a list of numbers operated on.
