@@ -38,6 +38,7 @@
 ;(define all-variables (remove-duplicates opsAndNum))
 ;all-variables
 
+(display "Merge list of numbers and operaters into one list") (newline)
 ; Found code on stackoverflow about merging 2 lists together
 (define (interleave lOps lNum)
   (cond
@@ -45,6 +46,7 @@
     [else (cons (first lOps)(interleave lNum (rest lOps)))]))
 (interleave all-randOps usableNum)
 
+(newline)
 ; Found information about getting a list of numbers operated on.
 ; Add all numbers in the list together
 (define (add-all L) (apply + L))
@@ -59,9 +61,13 @@
 (define (multiply-all L) (apply * L))
 
 ; Printing out the results
+(display "ADD all numbers in the list:") (newline)
 (add-all usableNum)
+(newline)(display "SUBTRACT all numbers in the list:") (newline)
 (subtract-all usableNum)
+(newline)(display "DIVIDE all numbers in the list:") (newline)
 (divide-all usableNum)
+(newline)(display "MULTIPLY all numbers in the list:") (newline)
 (multiply-all usableNum)
 
 
