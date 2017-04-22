@@ -21,12 +21,13 @@
 (define all-variables (remove-duplicates opsAndNum))
 ;all-variables
 
-;(define add-all (+ usableNum))
+; Found information about getting a list of numbers operated on.
 (define (add-all L) (apply + L))
 (define (subtract-all L) (apply - L))
 (define (divide-all L) (apply / L))
 (define (multiply-all L) (apply * L))
 
+; Printing out the results
 (add-all usableNum)
 (subtract-all usableNum)
 (divide-all usableNum)
