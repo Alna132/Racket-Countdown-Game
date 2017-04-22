@@ -5,10 +5,23 @@
 ; Author: Alanna Curran - G00309741
 
 ; Variables
-;(define nums (list 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 25 50 75 100))
+(define nums (list 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 25 50 75 100))
+; Target number that the 6 numbers below should equal to after being operated upon.
 (define targetNum 425)
+; List of 6 numbers chosen from nums.
 (define usableNum (list 100 50 25 19 1 1))
-(define ops (list '+ '- '* '/))
+; ops will be used in the equation for actually operating on numbers.
+(define ops (list + - * /))
+; opsOutput is for displaying the equation for the viewer
+(define opsOutput (list '+ '- '* '/))
+; This generates a random operator from the 4 above.
+(define randomOperator1 (list-ref opsOutput (random 4)))
+(define randomOperator2 (list-ref opsOutput (random 4)))
+(define randomOperator3 (list-ref opsOutput (random 4)))
+(define randomOperator4 (list-ref opsOutput (random 4)))
+(define randomOperator5 (list-ref opsOutput (random 4)))
+; Creating a list of 5 operators that are randomly generated.
+(define all-randOps (list randomOperator1 randomOperator2 randomOperator3 randomOperator4 randomOperator5))
 
 ;(remove-duplicates (permutations usableNum))
 ;(remove-duplicates (permutations ops))
@@ -21,9 +34,16 @@
 
 ; This displays all unique permutations of the operators and numbers,
 ; It is not yet merging the two together though.
-(define opsAndNum (list all-numbers all-ops))
-(define all-variables (remove-duplicates opsAndNum))
+;(define opsAndNum (list all-numbers all-ops))
+;(define all-variables (remove-duplicates opsAndNum))
 ;all-variables
+
+; Found code on stackoverflow about merging 2 lists together
+(define (interleave lOps lNum)
+  (cond
+    [(empty? lOps) lNum]
+    [else (cons (first lOps)(interleave lNum (rest lOps)))]))
+(interleave all-randOps usableNum)
 
 ; Found information about getting a list of numbers operated on.
 ; Add all numbers in the list together
