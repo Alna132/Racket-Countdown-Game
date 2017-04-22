@@ -15,9 +15,22 @@
 ; This generates too many nodes in the list.
 ;(cartesian-product all-ops all-numbers)
 
+; This displays all unique permutations of the operators and numbers,
+; It is not yet merging the two together though.
 (define opsAndNum (list all-numbers all-ops))
 (define all-variables (remove-duplicates opsAndNum))
-all-variables
+;all-variables
+
+;(define add-all (+ usableNum))
+(define (add-all L) (apply + L))
+(define (subtract-all L) (apply - L))
+(define (divide-all L) (apply / L))
+(define (multiply-all L) (apply * L))
+
+(add-all usableNum)
+(subtract-all usableNum)
+(divide-all usableNum)
+(multiply-all usableNum)
 
 ; Code from class to test out RPN in racket.
 ; 2 1s are added to the front of the list and a -1 is added to the end.
