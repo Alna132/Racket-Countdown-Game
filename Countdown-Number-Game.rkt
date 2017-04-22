@@ -1,5 +1,9 @@
 #lang racket
 
+; Countdown game developed in the Racket Programming Language.
+; Aim: Take in 6 random numbers from a list of 24 predetermined numbers. Use the 4 basic operands to reach the randomly generated target number.
+; Author: Alanna Curran - G00309741
+
 ; Variables
 ;(define nums (list 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 25 50 75 100))
 (define targetNum 425)
@@ -22,9 +26,16 @@
 ;all-variables
 
 ; Found information about getting a list of numbers operated on.
+; Add all numbers in the list together
 (define (add-all L) (apply + L))
+
+; Subtract all numbers in the list from eachother
 (define (subtract-all L) (apply - L))
+
+; Divide all numbers in the list into eachother
 (define (divide-all L) (apply / L))
+
+; Multiply all numbers in the list to eachother
 (define (multiply-all L) (apply * L))
 
 ; Printing out the results
@@ -32,6 +43,8 @@
 (subtract-all usableNum)
 (divide-all usableNum)
 (multiply-all usableNum)
+
+
 
 ; Code from class to test out RPN in racket.
 ; 2 1s are added to the front of the list and a -1 is added to the end.
@@ -56,6 +69,5 @@
 ;To do:
 ;loop through the permutations of the list w/ operands
 ;Output correct equations, discard rest.
-;Fix error in provided code.
 
 
