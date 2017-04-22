@@ -12,4 +12,4 @@ This function should return a way of calculating the target number (or as near a
 1. [Apply an operation to a list](http://stackoverflow.com/questions/41512010/sum-items-in-list-racket)
 1. [Countdown game in racket but only with 3 numbers](http://blog.hashcollision.org/?p=37)
 1. [Countdown in Java](https://www.reddit.com/r/dailyprogrammer/comments/452omr/20160210_challenge_253_intermediate_countdown/)
-1. []()
+1. [Merge 2 lists](http://stackoverflow.com/questions/12646888/scheme-merge-two-lists-into-one)
