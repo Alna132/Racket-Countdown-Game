@@ -15,27 +15,29 @@
 ; This generates too many nodes in the list.
 ;(cartesian-product all-ops all-numbers)
 
-
+(define opsAndNum (list all-numbers all-ops))
+(define all-variables (remove-duplicates opsAndNum))
+all-variables
 
 ; Code from class to test out RPN in racket.
 ; 2 1s are added to the front of the list and a -1 is added to the end.
 ; This represents RPN as from right to left RPN must start with an operator and end with 2 numbers to be operated on.
-(define start-perm (list -1 -1 -1 -1 1 1 1 1))
-(define X (remove-duplicates (permutations start-perm)))
+;(define start-perm (list -1 -1 -1 -1 1 1 1 1))
+;(define X (remove-duplicates (permutations start-perm)))
 ;(define l (list -1 -1 -1 -1 1 1 1))
 
-(define make-rpn l)
-(append (list 1 1) l (list -1))
+;(define make-rpn l)
+;(append (list 1 1) l (list -1))
 
-(map make-rpn X)
+;(map make-rpn X)
 
-(define (valid-rpn? e [s 0])
-  (if (null? e)
-    (if (= s 1) #t #f)
-    (if (= (car e) 1)
-        (valid-rpn? (cdr e) (+ 1 s))
-        (valid-rpn? (car e) (- 1 s))
-        )))
+;(define (valid-rpn? e [s 0])
+;  (if (null? e)
+;    (if (= s 1) #t #f)
+;    (if (= (car e) 1)
+;        (valid-rpn? (cdr e) (+ 1 s))
+;        (valid-rpn? (cdr e) (- 1 s))
+;        )))
 
 ;To do:
 ;loop through the permutations of the list w/ operands
