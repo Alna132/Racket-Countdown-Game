@@ -12,6 +12,8 @@ This function should return a way of calculating the target number (or as near a
 - Install [DrRacket](https://download.racket-lang.org).
 - Open Countdown-Number-Game.rkt in DrRacket.
 - Click Run button in the top right corner of the window.
+- (Optional) Enter your own equation with this code: 
+```(calculate-RPN '(100 50 - 25 - 19 1 - 1 - *))```
 
 ## References:
 1. [Apply an operation to a list](http://stackoverflow.com/questions/41512010/sum-items-in-list-racket)

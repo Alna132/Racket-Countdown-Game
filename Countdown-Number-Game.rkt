@@ -119,5 +119,8 @@
                    (reverse (cons x s)))])))
 
 ;(calculate-RPN '(3.0 4 2 * 1 5 - 2 3 ^ ^ / +))
+(newline)(display "Running RPN on (100 50 - 25 - 19 1 - 1 - *). Sould output 425.") (newline)
 (calculate-RPN '(100 50 - 25 - 19 1 - 1 - *))
+(newline)(display "Running RPN on (+ - 100 50 - 25 - 19 1 - 1). Should display an error.") (newline)
+(calculate-RPN '(+ - 100 50 - 25 - 19 1 - 1))
 ;(if (equal? targetNum (calculate-RPN '(100 50 - 25 - 19 1 - 1 - *))) ((display "Correct Equation: +")(display (calculate-RPN '(100 50 - 25 - 19 1 - 1 - *)))) (display "This equation is incorrect")) (newline)
