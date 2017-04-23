@@ -71,10 +71,18 @@
 (newline)(display "MULTIPLY all numbers in the list:") (newline)
 (multiply-all usableNum)
 
-(display "Summed list list:") (newline)
+(newline)
+; If any of the above 4 equal the target number, output the equation.
+(if (equal? targetNum (add-all usableNum)) ((display "Correct Equation: +")(display usableNum)) (display "Adding the list does not equal to Target Number")) (newline)
+(if (equal? targetNum (subtract-all usableNum)) ((display "Correct Equation: +")(display usableNum)) (display "Subtracting the list does not equal to Target Number")) (newline)
+(if (equal? targetNum (divide-all usableNum)) ((display "Correct Equation: +")(display usableNum)) (display "Dividing the list does not equal to Target Number")) (newline)
+(if (equal? targetNum (multiply-all usableNum)) ((display "Correct Equation: +")(display usableNum)) (display "Multiplying the list does not equal to Target Number")) (newline)
+
+
+;(display "Summed list list:") (newline)
 ; Sum the new list
-(define sumList (interleave all-randOps usableNum))
-apply(sumList)
+;(define sumList (interleave all-randOps usableNum))
+;apply(sumList)
 
 ; Code from class to test out RPN in racket.
 ; 2 1s are added to the front of the list and a -1 is added to the end.
@@ -95,9 +103,3 @@ apply(sumList)
 ;        (valid-rpn? (cdr e) (+ 1 s))
 ;        (valid-rpn? (cdr e) (- 1 s))
 ;        )))
-
-;To do:
-;loop through the permutations of the list w/ operands
-;Output correct equations, discard rest.
-
-
