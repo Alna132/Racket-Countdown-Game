@@ -23,6 +23,12 @@
 ; Creating a list of 5 operators that are randomly generated.
 (define all-randOps (list randomOperator1 randomOperator2 randomOperator3 randomOperator4 randomOperator5))
 
+; Create a random target number between 101 and 999
+(define randomTarget (random 101 1000))
+
+(display "Randomised target number:") (newline)
+randomTarget
+
 ;(remove-duplicates (permutations usableNum))
 ;(remove-duplicates (permutations ops))
 
@@ -31,6 +37,8 @@
 (define all-ops (cartesian-product opsOutput opsOutput opsOutput opsOutput opsOutput))
 ; This generates too many nodes in the list.
 ;(cartesian-product all-ops all-numbers)
+(display "All unique permutations of the list of 6 numbers:") (newline)
+all-numbers
 
 ; This displays all unique permutations of the operators and numbers,
 ; It is not yet merging the two together though.
@@ -74,10 +82,9 @@
 (newline)
 ; If any of the above 4 equal the target number, output the equation.
 (if (equal? targetNum (add-all usableNum)) ((display "Correct Equation: +")(display usableNum)) (display "Adding the list does not equal to Target Number")) (newline)
-(if (equal? targetNum (subtract-all usableNum)) ((display "Correct Equation: +")(display usableNum)) (display "Subtracting the list does not equal to Target Number")) (newline)
-(if (equal? targetNum (divide-all usableNum)) ((display "Correct Equation: +")(display usableNum)) (display "Dividing the list does not equal to Target Number")) (newline)
-(if (equal? targetNum (multiply-all usableNum)) ((display "Correct Equation: +")(display usableNum)) (display "Multiplying the list does not equal to Target Number")) (newline)
-
+(if (equal? targetNum (subtract-all usableNum)) ((display "Correct Equation: -")(display usableNum)) (display "Subtracting the list does not equal to Target Number")) (newline)
+(if (equal? targetNum (divide-all usableNum)) ((display "Correct Equation: /")(display usableNum)) (display "Dividing the list does not equal to Target Number")) (newline)
+(if (equal? targetNum (multiply-all usableNum)) ((display "Correct Equation: *")(display usableNum)) (display "Multiplying the list does not equal to Target Number")) (newline)
 
 ;(display "Summed list list:") (newline)
 ; Sum the new list
@@ -121,6 +128,9 @@
 ;(calculate-RPN '(3.0 4 2 * 1 5 - 2 3 ^ ^ / +))
 (newline)(display "Running RPN on (100 50 - 25 - 19 1 - 1 - *). Sould output 425.") (newline)
 (calculate-RPN '(100 50 - 25 - 19 1 - 1 - *))
-(newline)(display "Running RPN on (+ - 100 50 - 25 - 19 1 - 1). Should display an error.") (newline)
-(calculate-RPN '(+ - 100 50 - 25 - 19 1 - 1))
+
+; When uncommented it displays an error as the equation is not a RPN equation.
+;(newline)(display "Running RPN on (+ - 100 50 - 25 - 19 1 - 1). Should display an error.") (newline)
+;(calculate-RPN '(+ - 100 50 - 25 - 19 1 - 1))
+
 ;(if (equal? targetNum (calculate-RPN '(100 50 - 25 - 19 1 - 1 - *))) ((display "Correct Equation: +")(display (calculate-RPN '(100 50 - 25 - 19 1 - 1 - *)))) (display "This equation is incorrect")) (newline)
