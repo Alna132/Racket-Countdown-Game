@@ -103,3 +103,21 @@
 ;        (valid-rpn? (cdr e) (+ 1 s))
 ;        (valid-rpn? (cdr e) (- 1 s))
 ;        )))
+
+; RPN Code from https://rosettacode.org/wiki/Parsing/RPN_calculator_algorithm#Racket
+(define (calculate-RPN expr)
+  (for/fold ([stack '()]) ([token expr])
+    (printf "~a\t -> ~a~N" token stack)
+    (match* (token stack)
+     [((? number? n) s) (cons n s)]
+     [('+ (list x y s ___)) (cons (+ x y) s)]
+     [('- (list x y s ___)) (cons (- y x) s)]
+     [('* (list x y s ___)) (cons (* x y) s)]
+     [('/ (list x y s ___)) (cons (/ y x) s)]
+     [('^ (list x y s ___)) (cons (expt y x) s)]
+     [(x s) (error "calculate-RPN: Cannot calculate the expression:" 
+                   (reverse (cons x s)))])))
+
+;(calculate-RPN '(3.0 4 2 * 1 5 - 2 3 ^ ^ / +))
+(calculate-RPN '(100 50 - 25 - 19 1 - 1 - *))
+;(if (equal? targetNum (calculate-RPN '(100 50 - 25 - 19 1 - 1 - *))) ((display "Correct Equation: +")(display (calculate-RPN '(100 50 - 25 - 19 1 - 1 - *)))) (display "This equation is incorrect")) (newline)
