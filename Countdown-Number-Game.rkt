@@ -28,7 +28,7 @@
 
 ; This gets a list of all the unique permutations of the ops and usableNum lists.
 (define all-numbers (remove-duplicates (permutations usableNum)))
-(define all-ops (cartesian-product ops ops ops ops ops))
+(define all-ops (cartesian-product opsOutput opsOutput opsOutput opsOutput opsOutput))
 ; This generates too many nodes in the list.
 ;(cartesian-product all-ops all-numbers)
 
@@ -71,7 +71,10 @@
 (newline)(display "MULTIPLY all numbers in the list:") (newline)
 (multiply-all usableNum)
 
-
+(display "Summed list list:") (newline)
+; Sum the new list
+(define sumList (interleave all-randOps usableNum))
+apply(sumList)
 
 ; Code from class to test out RPN in racket.
 ; 2 1s are added to the front of the list and a -1 is added to the end.
